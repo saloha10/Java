@@ -29,40 +29,62 @@ public class Calculator extends Application {
 
         Button nummero = new Button("0");
         nummero.setOnAction(event -> { inmattning.setText(inmattning.getText()+"0"); });
-        nummero.setPrefHeight(100);
-        nummero.setPrefWidth(100);
+nummero.setPrefHeight(100);
+        nummero.setPrefWidth(300);
+
+        nummero.setStyle("-fx-font-size: 20");
+
+
 
         Button nummer = new Button("1");
         nummer.setOnAction(event -> { inmattning.setText(inmattning.getText()+"1"); });
         nummer.setPrefHeight(100);
         nummer.setPrefWidth(100);
 
+        nummer.setStyle("-fx-font-size: 20");
+
+
         Button nummer2 = new Button("2");
         nummer2.setOnAction(event -> { inmattning.setText(inmattning.getText()+"2"); });
         nummer2.setPrefHeight(100);
         nummer2.setPrefWidth(100);
+
+        nummer2.setStyle("-fx-font-size: 20");
 
         Button nummer3 = new Button("3");
         nummer3.setOnAction(event -> { inmattning.setText(inmattning.getText()+"3"); });
         nummer3.setPrefHeight(100);
         nummer3.setPrefWidth(100);
 
+
+        nummer3.setStyle("-fx-font-size: 20");
+
+
         Button nummer4 = new Button("4");
         nummer4.setOnAction(event -> { inmattning.setText(inmattning.getText()+"4"); });
         nummer4.setPrefHeight(100);
         nummer4.setPrefWidth(100);
+        nummer4.setStyle("-fx-font-size: 20");
 
         Button nummer5 = new Button("5");
         nummer5.setOnAction(event -> { inmattning.setText(inmattning.getText()+"5"); });
         nummer5.setPrefHeight(100);
         nummer5.setPrefWidth(100);
 
+        nummer5.setStyle("-fx-background-color: LIGHTBLUE");
+        nummer5.setStyle("-fx-font-size: 20");
 
 
         Button nummer6 = new Button("6");
         nummer6.setOnAction(event -> { inmattning.setText(inmattning.getText()+"6"); });
         nummer6.setPrefHeight(100);
         nummer6.setPrefWidth(100);
+
+        nummer6.setStyle("-fx-font-size: 20");
+
+
+
+
 
 
 
@@ -71,6 +93,8 @@ public class Calculator extends Application {
         nummer7.setPrefHeight(100);
         nummer7.setPrefWidth(100);
 
+        nummer7.setStyle("-fx-background-color: LIGHTBLUE");
+        nummer7.setStyle("-fx-font-size: 20");
 
 
 
@@ -79,6 +103,7 @@ public class Calculator extends Application {
         nummer8.setPrefHeight(100);
         nummer8.setPrefWidth(100);
 
+        nummer8.setStyle("-fx-font-size: 20");
 
 
 
@@ -87,19 +112,21 @@ public class Calculator extends Application {
         nummer9.setPrefHeight(100);
         nummer9.setPrefWidth(100);
 
-
+        nummer9.setStyle("-fx-font-size: 20");
 
         Button tecken = new Button("＋");
         tecken.setOnAction(event -> { inmattning.setText(inmattning.getText() + "+"); });
         tecken.setPrefHeight(100);
         tecken.setPrefWidth(100);
 
+        tecken.setStyle("-fx-font-size: 20");
+
         Button tecken1 = new Button("－");
         tecken1.setOnAction(event -> { inmattning.setText(inmattning.getText() + "-"); });
         tecken1.setPrefHeight(100);
         tecken1.setPrefWidth(100);
 
-
+        tecken1.setStyle("-fx-font-size: 20");
 
 
         Button tecken2 = new Button("*");
@@ -107,29 +134,39 @@ public class Calculator extends Application {
         tecken2.setPrefHeight(100);
         tecken2.setPrefWidth(100);
 
+        tecken2.setStyle("-fx-font-size: 20");
+
         Button tecken3 = new Button("÷");
         tecken3.setOnAction(event -> { inmattning.setText(inmattning.getText() + "/"); });
         tecken3.setPrefHeight(100);
         tecken3.setPrefWidth(100);
 
-
+        tecken3.setStyle("-fx-font-size: 20");
 
         Button tecken4 = new Button("═");
         tecken4.setOnAction(event -> { resultat(); });
         tecken4.setPrefHeight(100);
         tecken4.setPrefWidth(100);
 
+        tecken4.setStyle("-fx-font-size: 20");
+
         Button tecken5 = new Button("⌫");
         tecken5.setOnAction(event -> { inmattning.clear(); });
         tecken5.setPrefHeight(100);
         tecken5.setPrefWidth(100);
 
-        Button tecken6 = new Button("％");
-        tecken6.setOnAction(event -> { inmattning.setText(inmattning.getText() + "％"); });
+        tecken5.setStyle("-fx-font-size: 20");
+
+
+        Button tecken6 = new Button("%");
+        tecken6.setOnAction(event -> { inmattning.setText(inmattning.getText() + "%"); });
         tecken6.setPrefHeight(100);
         tecken6.setPrefWidth(100);
 
+        tecken6.setStyle("-fx-font-size: 20");
 
+
+//kolla
 
 
 
@@ -146,12 +183,12 @@ public class Calculator extends Application {
         root.addRow(1,  nummer,nummer2, nummer3, tecken);
         root.addRow(2, nummer4, nummer5, nummer6, tecken1);
         root.addRow(3,  nummer7, nummer8, nummer9,  tecken4);
-        root.addRow(4,  nummero);
+        root.addRow(4, nummero);
 
 
 
 
-        VBox layout = new VBox(inmattning,root);
+        VBox layout = new VBox(inmattning,root, nummero);
         Scene scene = new Scene (layout, 400, 500);
 
         grund.setTitle("Miniräknare");
@@ -161,7 +198,7 @@ public class Calculator extends Application {
         grund.show();
     }
 
-   //Uträkning
+   //Uträkning för själva miniräknaren. Använder en metod so
     public void resultat(){
         ArrayList <String> stringArray= new ArrayList<>();
         String input = inmattning.getText();
@@ -191,10 +228,10 @@ public class Calculator extends Application {
                     double temp = Double.parseDouble(stringArray.get(0));
                     double temp2 = Double.parseDouble(stringArray.get(1));
 
-                    double resultat3 =temp + temp2;
-                    int resutatint=(int)resultat3;
+                    double resultat2 =temp + temp2;
+                    int resutatint=(int)resultat2;
 
-                    System.out.println(resultat3);
+                    System.out.println(resultat2);
 
                     stringArray.remove(1);
                     stringArray.remove(0);
@@ -206,10 +243,10 @@ public class Calculator extends Application {
                     double temp = Double.parseDouble(stringArray.get(0));
                     double temp2 = Double.parseDouble(stringArray.get(1));
 
-                    double resultat3 =temp - temp2;
-                    int resultatInt = (int) resultat3;
+                    double resultat2 =temp - temp2;
+                    int resultatInt = (int) resultat2;
 
-                    System.out.println(resultat3);
+                    System.out.println(resultat2);
 
                     stringArray.remove(1);
                     stringArray.remove(0);
@@ -222,10 +259,10 @@ public class Calculator extends Application {
                     double temp = Double.parseDouble(stringArray.get(0));
                     double temp2 = Double.parseDouble(stringArray.get(1));
 
-                    double resultat3 =temp * temp2;
-                    int resultatInt = (int) resultat3;
+                    double resultat2 =temp * temp2;
+                    int resultatInt = (int) resultat2;
 
-                    System.out.println(resultat3);
+                    System.out.println(resultat2);
 
                     stringArray.remove(1);
                     stringArray.remove(0);
@@ -238,10 +275,10 @@ public class Calculator extends Application {
                     double temp = Double.parseDouble(stringArray.get(0));
                     double temp2 = Double.parseDouble(stringArray.get(1));
 
-                    double resultat3 =temp / temp2;
-                    int resultatInt = (int) resultat3;
+                    double resultat2 =temp / temp2;
+                    int resultatInt = (int) resultat2;
 
-                    System.out.println(resultat3);
+                    System.out.println(resultat2);
 
                     stringArray.remove(1);
                     stringArray.remove(0);
@@ -254,10 +291,10 @@ public class Calculator extends Application {
                     double temp = Double.parseDouble(stringArray.get(0));
                     double temp2 = Double.parseDouble(stringArray.get(1));
 
-                    double resultat3 = temp % temp2;
-                    int resultatInt = (int) resultat3;
+                    double resultat2 = temp % temp2;
+                    int resultatInt = (int) resultat2;
 
-                    System.out.println(resultat3);
+                    System.out.println(resultat2);
 
                     stringArray.remove(1);
                     stringArray.remove(0);
